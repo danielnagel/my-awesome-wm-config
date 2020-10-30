@@ -36,8 +36,8 @@ local main = {
 -- Custom Local Library: Keys and Mouse Binding
 local binding = {
     globalbuttons = require("binding.globalbuttons"),
---[[
     clientbuttons = require("binding.clientbuttons"),
+--[[
     globalkeys = require("binding.globalkeys"),
     bindtotags = require("binding.bindtotags"),
     clientkeys = require("binding.clientkeys"),
@@ -76,7 +76,10 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 require("deco.statusbar")
 
 -- Rules
-awful.rules.rules = main.rules(clientkeys, clientbuttons)
+awful.rules.rules = main.rules(
+    clientkeys,
+    binding.clientbuttons()
+)
 --[[
 awful.rules.rules = main.rules(
     binding.clientkeys(),
