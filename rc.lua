@@ -34,15 +34,15 @@ local main = {
 }
 
 -- Custom Local Library: Keys and Mouse Binding
---[[
 local binding = {
     globalbuttons = require("binding.globalbuttons"),
+--[[
     clientbuttons = require("binding.clientbuttons"),
     globalkeys = require("binding.globalkeys"),
     bindtotags = require("binding.bindtotags"),
     clientkeys = require("binding.clientkeys"),
-}
 --]]
+}
 
 -- Layouts
 RC.layouts = main.layouts()
@@ -61,9 +61,11 @@ menubar.utils.terminal = RC.vars.terminal
 --[[
 RC.globalkeys = binding.globalkeys()
 RC.globalkeys = binding.bindtotags(RC.globalkeys)
+--]]
 
 -- Set root
 root.buttons(binding.globalbuttons())
+--[[
 root.keys(RC.globalkeys)
 
 -- Keyboard map indicator and switcher
