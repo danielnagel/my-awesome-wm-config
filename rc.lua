@@ -37,11 +37,9 @@ local main = {
 local binding = {
     globalbuttons = require("binding.globalbuttons"),
     clientbuttons = require("binding.clientbuttons"),
---[[
     globalkeys = require("binding.globalkeys"),
-    bindtotags = require("binding.bindtotags"),
-    clientkeys = require("binding.clientkeys"),
---]]
+    --bindtotags = require("binding.bindtotags"),
+    --clientkeys = require("binding.clientkeys"),
 }
 
 -- Layouts
@@ -58,19 +56,17 @@ RC.launcher = awful.widget.launcher(
 menubar.utils.terminal = RC.vars.terminal
 
 -- Mouse and Key bindings
---[[
 RC.globalkeys = binding.globalkeys()
+--[[
 RC.globalkeys = binding.bindtotags(RC.globalkeys)
 --]]
 
 -- Set root
 root.buttons(binding.globalbuttons())
---[[
 root.keys(RC.globalkeys)
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
---]]
 
 -- Statusbar: Wibar
 require("deco.statusbar")
