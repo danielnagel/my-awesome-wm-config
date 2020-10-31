@@ -39,7 +39,7 @@ local binding = {
     clientbuttons = require("binding.clientbuttons"),
     globalkeys = require("binding.globalkeys"),
     --bindtotags = require("binding.bindtotags"),
-    --clientkeys = require("binding.clientkeys"),
+    clientkeys = require("binding.clientkeys"),
 }
 
 -- Layouts
@@ -73,15 +73,9 @@ require("deco.statusbar")
 
 -- Rules
 awful.rules.rules = main.rules(
-    clientkeys,
-    binding.clientbuttons()
-)
---[[
-awful.rules.rules = main.rules(
     binding.clientkeys(),
     binding.clientbuttons()
 )
-]]--
 
 -- Signals
 require("main.signals")
