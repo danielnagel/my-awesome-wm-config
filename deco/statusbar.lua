@@ -6,9 +6,11 @@ local awful = require("awful")
 local deco = {
     wallpaper = require("deco.wallpaper"),
     taglist = require("deco.taglist"),
+    tasklist = require("deco.tasklist"),
 }
 
 local taglist_buttons = deco.taglist()
+local tasklist_buttons = deco.tasklist()
 
 local _M = {}
 
@@ -32,6 +34,11 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a tasklist widget
+    s.mytasklist = awful.widget.tasklist {
+        screen = s,
+        filter = awful.widget.tasklist.filter.currentags,
+        buttons = tasklist_buttons
+    }
 
     -- Create the wibox
 
