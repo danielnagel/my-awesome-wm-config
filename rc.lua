@@ -63,12 +63,6 @@ RC.globalkeys = binding.bindtotags(RC.globalkeys)
 root.buttons(binding.globalbuttons())
 root.keys(RC.globalkeys)
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
--- Statusbar: Wibar
-require("deco.statusbar")
-
 -- Rules
 awful.rules.rules = main.rules(
     binding.clientkeys(),
@@ -77,3 +71,6 @@ awful.rules.rules = main.rules(
 
 -- Signals
 require("main.signals")
+
+-- Statusbar: Wibar
+require("deco.statusbar")
