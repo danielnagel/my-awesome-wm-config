@@ -1,15 +1,8 @@
--- Standard awesome library
-local awful = require("awful")
-local hotkeys_popup = require("awful.hotkeys_popup").widget
-
 -- Theme handling library
 local beautiful = require("beautiful") -- for awesome.icon
 
 local M = {} -- menu
 local _M = {} -- module
-
--- reading
--- https://awesomewm.org/apidoc/popups%20and%20bars/awful.menu.html
 
 -- -- --
 
@@ -24,9 +17,6 @@ local editor_cmd = terminal .. " -e " .. editor
 -- -- --
 
 M.awesome = {
-    { "hotkeys", function() 
-        hotkeys_popup.show_help(nil, awful.screen.focused()) 
-      end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
     { "Terminal", terminal },
@@ -35,24 +25,18 @@ M.awesome = {
     { "quit", function() awesome.quit() end }
 }
 
-M.favorite = {
-    { "thunar", "thunar" },
-    { "code", "code" },
-    { "&firefox", "firefox" },
-    { "&thunderbird", "thunderbird" },
-    { "libreoffice", "libreoffice" },
-    { "keepassxc", "keepassxc" },
-}
-
 -- -- --
 
 function _M.get()
 
     -- Main Menu
     local menu_items = {
-      { "awesome", M.awesome, beautiful.awesome_subicon },
-      { "open terminal", terminal },
-      { "favorite", M.favorite }
+      before = {
+        { "awesome", M.awesome, beautiful.awesome_icon }
+      },
+      after = {
+        { "open terminal", terminal }
+      },
     }
   
     return menu_items

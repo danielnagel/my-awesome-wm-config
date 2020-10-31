@@ -10,6 +10,9 @@ local beautiful = require("beautiful")
 -- Miscellanous awesome library
 local menubar = require("menubar")
 
+-- User-defined library
+local freedesktop = require("freedesktop")
+
 RC = {} -- global namespace, on top before require any modules
 RC.vars = require("main.user-variables")
 modkey = RC.vars.modkey
@@ -49,7 +52,7 @@ RC.layouts = main.layouts()
 RC.tags = main.tags()
 
 -- RC.mainmenu
-RC.mainmenu = awful.menu({ items = main.menu() }) -- in globalkeys
+RC.mainmenu = freedesktop.menu.build(main.menu())
 RC.launcher = awful.widget.launcher(
     { image = beautiful.awesome_icon, menu = RC.mainmenu }
 )
