@@ -17,12 +17,10 @@ local editor_cmd = terminal .. " -e " .. editor
 -- -- --
 
 M.awesome = {
-    { "manual", terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
     { "Terminal", terminal },
-    { "Shutdown/Logout", "oblogout" },
-    { "restart", awesome.restart },
-    { "quit", function() awesome.quit() end }
+    { "restart awesome", awesome.restart },
+    { "quit awesome", function() awesome.quit() end }
 }
 
 -- -- --
