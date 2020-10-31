@@ -38,7 +38,7 @@ local binding = {
     globalbuttons = require("binding.globalbuttons"),
     clientbuttons = require("binding.clientbuttons"),
     globalkeys = require("binding.globalkeys"),
-    --bindtotags = require("binding.bindtotags"),
+    bindtotags = require("binding.bindtotags"),
     clientkeys = require("binding.clientkeys"),
 }
 
@@ -57,9 +57,7 @@ menubar.utils.terminal = RC.vars.terminal
 
 -- Mouse and Key bindings
 RC.globalkeys = binding.globalkeys()
---[[
 RC.globalkeys = binding.bindtotags(RC.globalkeys)
---]]
 
 -- Set root
 root.buttons(binding.globalbuttons())
