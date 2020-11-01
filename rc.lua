@@ -75,4 +75,5 @@ awful.rules.rules = main.rules(
 require("main.signals")
 
 -- Statusbar: Wibar
-require("deco.statusbar")
+local statusbar = require("statusbar.statusbar")
+statusbar()
