@@ -20,9 +20,8 @@ modkey = RC.vars.modkey
 -- Error handling
 require("main.error-handling")
 
--- Variable definitions
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.wallpaper = RC.vars.wallpaper
+-- Themes
+require("main.theme")
 
 -- -- --
 

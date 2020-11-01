@@ -12,8 +12,8 @@ function _M.get()
         names = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9"
         },
-        layouts = {
-            RC.layouts[1], RC.layouts[2], RC.layouts[3],
+        layout = {
+            RC.layouts[2], RC.layouts[2], RC.layouts[3],
             RC.layouts[4], RC.layouts[5], RC.layouts[6],
             RC.layouts[7], RC.layouts[8], RC.layouts[9]
         }
