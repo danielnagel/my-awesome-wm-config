@@ -43,9 +43,7 @@ W.mem = lain.widget.mem({
 -- -- --
 
 -- CPU
-I.cpu = wibox.widget.imagebox()
-I.cpu:set_image(beautiful.widget_cpu)
-
+I.cpu = wibox.widget.imagebox(beautiful.widget_cpu)
 W.cpu = lain.widget.cpu({
   settings = function()
     widget:set_markup(markup(gmc.color['green900'], cpu_now.usage .. "% "))
@@ -108,18 +106,6 @@ W.mpd = lain.widget.mpd({
     end
 })
 
--- -- --
-
--- Coretemp
---[[
-I.temp = wibox.widget.imagebox(beautiful.widget_temp)
-
-W.temp = lain.widget.temp({
-    settings = function()
-        widget:set_markup(markup(gmc.color['cyan900'], coretemp_now .. "°C "))
-    end
-})
---]]
 -- -- --
 
 -- Textclock

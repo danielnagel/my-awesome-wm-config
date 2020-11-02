@@ -30,19 +30,24 @@ function WB.add_widgets_monitor_left (line, s)
     layout = wibox.layout.fixed.horizontal,
 
     WB.spacer,
-    --  net
-    cis.netdown, cws.netdowninfo,
-    cis.netup,   cws.netupinfo,
 
-    --  mem, cpu, files system, temp, batt
+    -- net
+    cis.netdown, cws.netdowninfo,
+    cis.netup, cws.netupinfo,
+
+    -- mem
     WB.spacerline,
-    cis.mem,     cws.mem,
+    cis.mem, cws.mem,
+
+    -- cpu
     WB.spacerline,
-    cis.cpu,     cws.cpu,
+    cis.cpu, cws.cpu,
+
+    -- fs
     WB.spacerline,
-    cis.fs,      cws.fs,
-    --cis.temp,    cws.temp,
---  cis.bat,     cws.bat,
+    cis.fs, cws.fs,
+
+    -- updates
     WB.spacerline,
     cws.updates,
     
@@ -50,11 +55,15 @@ function WB.add_widgets_monitor_left (line, s)
     WB.spacerline,
     cis.weather, cws.weather,
 
-    --  mpd
+    -- volume
     WB.spacerline,
-    cis.volume,  cws.volume,
+    cis.volume, cws.volume,
+
+    -- mpd
     WB.spacerline,
-    cis.mpd,     cws.mpd,
+    cis.mpd, cws.mpd,
+
+    -- at last
     WB.spacer,
   }
 end
@@ -70,6 +79,8 @@ function WB.add_widgets_monitor_right (line, s)
 
     --  time
     cis.clock,   cws.textclock,
+
+    -- at last
     WB.spacer
   }
 end

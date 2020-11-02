@@ -16,7 +16,7 @@ theme.taglist_font  = "Hack Nerd Font Bold 9"
 theme.bg_normal     = gmc.color['grey900']     .. "cc"
 theme.bg_focus      = gmc.color['blue500']    .. "cc"
 theme.bg_urgent     = gmc.color['orange900'] .. "cc"
-theme.bg_minimize   = gmc.color['grey500']   .. "cc"
+theme.bg_minimize   = gmc.color['orange500']   .. "cc"
 theme.bg_systray    = gmc.color['grey100']   .. "cc"
 
 -- Colors foreground
