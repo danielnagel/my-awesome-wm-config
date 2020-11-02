@@ -13,11 +13,11 @@ theme.taglist_font  = "Hack Nerd Font Bold 9"
 
 -- Colors background
 
-theme.bg_normal     = gmc.color['grey900']     .. "cc"
-theme.bg_focus      = gmc.color['blue500']    .. "cc"
+theme.bg_normal     = gmc.color['archgrey']     .. "cc"
+theme.bg_focus      = gmc.color['archblue']    .. "cc"
 theme.bg_urgent     = gmc.color['orange900'] .. "cc"
 theme.bg_minimize   = gmc.color['orange500']   .. "cc"
-theme.bg_systray    = gmc.color['grey100']   .. "cc"
+theme.bg_systray    = gmc.color['archgrey']   .. "cc"
 
 -- Colors foreground
 
@@ -34,7 +34,7 @@ theme.useless_gap   = dpi(4)
 
 theme.border_width  = dpi(1)
 theme.border_normal = gmc.color['grey500']   .. "cc"
-theme.border_focus  = gmc.color['blue500']    .. "cc"
+theme.border_focus  = gmc.color['archblue']    .. "cc"
 theme.border_marked = gmc.color['orange500'] .. "cc"
 
 -- There are other variable sets
@@ -49,19 +49,19 @@ theme.border_marked = gmc.color['orange500'] .. "cc"
 
 -- Taglist
 
-theme.taglist_bg_focus = gmc.color['blue500'] .. "cc"
+theme.taglist_bg_focus = gmc.color['archblue'] .. "cc"
 theme.taglist_fg_focus = gmc.color['white']
 
 -- Tasklist
 
-theme.tasklist_bg_normal = gmc.color['grey900']    .. "88"
-theme.tasklist_bg_focus  = gmc.color['blue500']   .. "88"
+theme.tasklist_bg_normal = gmc.color['archgrey']    .. "88"
+theme.tasklist_bg_focus  = gmc.color['archblue']   .. "88"
 theme.tasklist_fg_focus  = gmc.color['white']
 
 -- Titlebar
 
-theme.titlebar_bg_normal = gmc.color['grey900']   .. "cc"
-theme.titlebar_bg_focus  = gmc.color['grey900']   .. "cc"
+theme.titlebar_bg_normal = gmc.color['archgrey']   .. "cc"
+theme.titlebar_bg_focus  = gmc.color['archgrey']   .. "cc"
 theme.titlebar_fg_focus  = gmc.color['white']   .. "cc"
 
 -- Generate taglist squares:
@@ -70,7 +70,7 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
     taglist_square_size, gmc.color['white']
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, gmc.color['blue500']
+    taglist_square_size, gmc.color['archblue']
 )
 
 -- Display the taglist squares
@@ -84,8 +84,8 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 theme.menu_height = 20      -- dpi(15)
 theme.menu_width  = 180     -- dpi(100)
 theme.menu_context_height = 20
-theme.menu_bg_normal = gmc.color['grey900']  .. "cc"
-theme.menu_bg_focus  = gmc.color['blue500'] .. "cc"
+theme.menu_bg_normal = gmc.color['archgrey']  .. "cc"
+theme.menu_bg_focus  = gmc.color['archblue'] .. "cc"
 theme.menu_fg_focus  = gmc.color['white']
-theme.menu_border_color = gmc.color['blue500'] .. "cc"
+theme.menu_border_color = gmc.color['archblue'] .. "cc"
 theme.menu_border_width = 1

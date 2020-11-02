@@ -9,6 +9,8 @@ local _M = {}
 _M.color = {
     ['white'] = '#ffffff',
     ['black'] = '#000000',
+    ['archblue'] = '#1793d1',
+    ['archgrey'] = '#333333',
 
     ['grey50']  = '#fafafa',
     ['grey100'] = '#f5f5f5',
