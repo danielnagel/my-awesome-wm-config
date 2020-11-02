@@ -36,31 +36,24 @@ function WB.add_widgets_monitor_left (line, s)
     cis.netup, cws.netupinfo,
 
     -- mem
-    WB.spacerline,
     cis.mem, cws.mem,
 
     -- cpu
-    WB.spacerline,
     cis.cpu, cws.cpu,
 
     -- fs
-    WB.spacerline,
     cis.fs, cws.fs,
 
     -- updates
-    WB.spacerline,
-    cws.updates,
+    cis.updates, cws.updates,
     
     --  wheather
-    WB.spacerline,
     cis.weather, cws.weather,
 
     -- volume
-    WB.spacerline,
     cis.volume, cws.volume,
 
     -- mpd
-    WB.spacerline,
     cis.mpd, cws.mpd,
 
     -- at last
