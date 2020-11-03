@@ -2,6 +2,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local beautiful     = require("beautiful")
 
 -- Menubar library
 local menubar = require("menubar")
@@ -12,17 +13,19 @@ local terminal = RC.vars.terminal
 
 local _M = {}
 
--- reading
+-- -- --
+
+-- documentation
 -- https://awesomewm.org/wiki/Global_Keybindings
 
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- --
 
 function _M.get()
   local globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Tag browsing
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -46,7 +49,7 @@ function _M.get()
     awful.key({ modkey,           }, "w", function () RC.mainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
@@ -67,7 +70,7 @@ function _M.get()
         end,
         {description = "go back", group = "client"}),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -76,7 +79,7 @@ function _M.get()
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Layout manipulation
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -107,7 +110,7 @@ function _M.get()
               end,
               {description = "restore minimized", group = "client"}),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Prompt
     awful.key({ modkey },            "r",     function () awful.screen.focused().promptbox:run() end,
               {description = "run prompt", group = "launcher"}),
@@ -123,7 +126,7 @@ function _M.get()
               end,
               {description = "lua execute prompt", group = "awesome"}),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Resize
     --awful.key({ modkey, "Control" }, "Left",  function () awful.client.moveresize( 20,  20, -40, -40) end),
     --awful.key({ modkey, "Control" }, "Right", function () awful.client.moveresize(-20, -20,  40,  40) end),
@@ -146,11 +149,52 @@ function _M.get()
     awful.key({ modkey, "Shift"   }, "Right", 
               function () awful.client.moveresize( 20,   0,   0,   0) end),
 
-    --   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+    -- -- --
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
 
+    -- -- --
+    -- Volume Control
+    awful.key({}, "XF86AudioRaiseVolume",
+        function ()
+            os.execute(string.format("amixer -q set %s 1%%+", clone_widget_set.volume.channel))
+            clone_widget_set.volume.update()
+        end,
+        {description = "volume up", group = "hotkeys"}),
+    awful.key({}, "XF86AudioLowerVolume",
+        function ()
+            os.execute(string.format("amixer -q set %s 1%%-", clone_widget_set.volume.channel))
+            clone_widget_set.volume.update()
+        end,
+        {description = "volume down", group = "hotkeys"}),
+    awful.key({}, "XF86AudioMute",
+        function ()
+            os.execute(string.format("amixer -q set %s toggle", clone_widget_set.volume.togglechannel or clone_widget_set.volume.channel))
+            clone_widget_set.volume.update()
+        end,
+        {description = "toggle mute", group = "hotkeys"}),
+
+    -- -- --
+    -- MPD Control
+    awful.key({}, "XF86AudioPlay",
+        function ()
+            os.execute("mpc toggle")
+            clone_widget_set.mpd.update()
+        end,
+        {description = "mpc toggle", group = "widgets"}),
+    awful.key({}, "XF86AudioPrev",
+        function ()
+            os.execute("mpc prev")
+            clone_widget_set.mpd.update()
+        end,
+        {description = "mpc prev", group = "widgets"}),
+    awful.key({}, "XF86AudioNext",
+        function ()
+            os.execute("mpc next")
+            clone_widget_set.mpd.update()
+        end,
+        {description = "mpc next", group = "widgets"})
   )
 
   return globalkeys
