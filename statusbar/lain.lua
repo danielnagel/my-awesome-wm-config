@@ -16,6 +16,9 @@ local lain = require("lain")
 -- Custom Local Library
 local gmc = require("themes.default.gmc")
 
+-- Custom Lain widgets
+local updates = require("statusbar.widgets.updates")
+
 -- -- --
 
 local W = {}
@@ -156,7 +159,7 @@ W.netupinfo = lain.widget.net({
 
 -- Updates
 I.updates = wibox.widget.imagebox(beautiful.widget_mail)
-W.updates = lain.widget.updates({
+W.updates = updates({
     notification_preset = {
         position = "bottom_left"
     },
