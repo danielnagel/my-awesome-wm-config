@@ -1,6 +1,7 @@
 -- Standard Awesome library
 local gears = require("gears")
 local awful = require("awful")
+local xrandr = require("main.xrandr")
 -- Custom Local Library
 -- local titlebar = require("anybox.titlebar")
 
@@ -51,7 +52,9 @@ function _M.get()
         c.maximized_horizontal = not c.maximized_horizontal
         c:raise()
       end ,
-      {description = "(un)maximize horizontally", group = "client"})
+      {description = "(un)maximize horizontally", group = "client"}),
+    awful.key({ modkey }, "d", function() xrandr.xrandr() end,
+	      { description = "switch resolution", group = "client" })
   )
 
   return clientkeys
