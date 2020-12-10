@@ -122,6 +122,19 @@ W.textclock = awful.widget.textclock(
 -- -- --
 
 -- Calendar
+W.calendar = lain.widget.cal({
+    attach_to = { W.textclock },
+    notification_preset = {
+        font = "Terminus 10",
+        fg   = theme.fg_normal,
+        bg   = theme.bg_normal,
+        position = "bottom_right"
+    },
+    week_number = "left",
+    icons = "",
+    followtag = true,
+})
+
 
 -- -- --
 
